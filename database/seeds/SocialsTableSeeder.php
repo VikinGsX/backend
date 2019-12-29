@@ -25,7 +25,7 @@ class SocialsTableSeeder extends Seeder
             'avatar' => 'https://lh3.googleusercontent.com/a-/AAuE7mDyRas-CoaxkHtaL-TUeH3BcgvAuBSL1FqiKsMi',
         ]);
 
-        factory(App\Social::class, 9)->create();
+        // factory(App\Social::class, 9)->create();
 
     }
 }
