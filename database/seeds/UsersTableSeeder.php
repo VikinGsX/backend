@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             'station' => 'backend.test',
         ]);
 
-        factory(App\User::class, 3)->create();
+        // factory(App\User::class, 3)->create();
 
 
 
