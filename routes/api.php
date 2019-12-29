@@ -37,9 +37,9 @@ Route::group(['middleware' => 'SwitchGuardValidate'], function (){
 Route::middleware('dev')->post('/register', 'Api\Guest\RegisterController@register');
 
 //使用官網帳密登入
-Route::middleware('login')->post('/login', 'Api\Guest\LoginController@tryToLogin');
+Route::middleware('dev')->post('/login', 'Api\Guest\LoginController@tryToLogin');
 
-Route::middleware('dev')->post('/test', 'Api\Guest\RegisterController@test');
+//Route::middleware('dev')->post('/test', 'Api\Guest\RegisterController@test');
 
 //將用戶重新導向至OAuth提供程序
 Route::get('/login/{provider}', 'Api\Guest\SocialController@redirectToProvider');
@@ -72,7 +72,7 @@ Route::post('/change/new/token', 'Api\Members\HandleMembersToken@HandleNewToken'
 
 //======================================================================================
 //test
-Route::post('/test', 'Api\Guest\SocialController@test');
+Route::post('/test', 'Api\Guest\LoginController@test');
 //Route::get('/test2', function(){
 //    $user = \App\Social::find(1);
 //    event(new \App\Events\ProviderSignup($user));

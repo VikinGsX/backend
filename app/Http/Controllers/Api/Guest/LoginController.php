@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Helper\ProxyIssueTokenTrait;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
 class LoginController extends Controller
@@ -49,5 +50,10 @@ class LoginController extends Controller
             'userData' => [Auth::user()],
         ], 200);
 
+    }
+
+    public function test(Request $request)
+    {
+        return $request;
     }
 }
