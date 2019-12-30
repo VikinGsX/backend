@@ -81,7 +81,9 @@ trait ProxyIssueTokenTrait
 
         } catch (RequestException $exception) {
 
-            return response()->json($exception->getResponse());
+          //  return response()->json($exception->getResponse());
+
+            return 'error';
 
         }
 
