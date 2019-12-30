@@ -44,6 +44,9 @@ class LoginController extends Controller
         //若驗證成功則頒發token
 
         $data = $this->getAccessTokenFromRegister($validator, 'users', 'Profile');
+        if(!key_exists('access_token', $data)){
+            return response('token error!');
+        }
         return response()->json([
             'success' => ['登入成功 !'],
             'tokenData' => [$data],

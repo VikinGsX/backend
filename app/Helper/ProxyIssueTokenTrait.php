@@ -83,7 +83,7 @@ trait ProxyIssueTokenTrait
 
           //  return response()->json($exception->getResponse());
 
-            return 'error';
+            return response()->json(['token_error' => $exception]);
 
         }
 
