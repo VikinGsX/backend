@@ -82,10 +82,8 @@ trait ProxyIssueTokenTrait
         } catch (RequestException $exception) {
 
           //  return response()->json($exception->getResponse());
-            $respondd = $this->client->request('POST', $this->issueUrl(), ['form_params' => $params]);
-            //return response()->json(['token_error' => $exception]);
 
-            return $respondd;
+            return response()->json(['token_error' => $exception]);
 
         }
 
