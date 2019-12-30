@@ -45,7 +45,7 @@ class LoginController extends Controller
 
         $data = $this->getAccessTokenFromRegister($validator, 'users', 'Profile');
         if(!key_exists('access_token', $data)){
-            return response('token error!');
+            return $data;
         }
         return response()->json([
             'success' => ['登入成功 !'],
