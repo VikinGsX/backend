@@ -87,7 +87,14 @@ trait ProxyIssueTokenTrait
 
         if ($respond->getStatusCode() === 200) {
 
-            return json_decode($respond->getBody()->getContents(), true);
+            $token = json_decode($respond->getBody()->getContents(), true);
+
+            if(key_exists('access_token', $token)){
+                return $token;
+            }
+
+            return response('請求成功但沒有產生token!!');
+
         }
 
         return response()->json(['errors' => ['status_code' => 'token請求失敗 !']], 500);
